@@ -1,0 +1,149 @@
+.right-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-right: 60px;
+  padding: 40px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.stock-table-container {
+  --card-padding: clamp(20px, 2vw, 25px);
+  --border-radius: 16px;
+  --transition-speed: 0.2s;
+  
+  flex: 0 0 auto;
+  width: 450px;
+  margin: 20px;
+  padding: var(--card-padding);
+  background-color: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  isolation: isolate;
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 20px;
+}
+
+.stock-header h2 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.update-badge {
+  background-color: #22c55e;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 100vmax;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.stocks-wrapper {
+  display: grid;
+  gap: 12px;
+}
+
+.stock-card {
+  padding: 16px;
+  border-radius: calc(var(--border-radius) - 4px);
+  background-color: #f8fafc;
+  transition: transform var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease;
+  will-change: transform;
+}
+
+.stock-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stock-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block-end: 8px;
+}
+
+.stock-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.symbol {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.company {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.stock-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.change {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.change.positive {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.change.negative {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.stock-volume {
+  display: flex;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.volume-label {
+  color: #94a3b8;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .stock-table-container {
+    width: min(100%, 450px);
+    margin-inline: auto;
+  }
+} 
