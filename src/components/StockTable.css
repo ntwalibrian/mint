@@ -1,149 +1,110 @@
-.right-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  margin-right: 60px;
-  padding: 40px;
-  border-radius: 10px;
-  width: 500px;
-}
-
+/* StockTable.css */
 .stock-table-container {
-  --card-padding: clamp(20px, 2vw, 25px);
-  --border-radius: 16px;
-  --transition-speed: 0.2s;
-  
-  flex: 0 0 auto;
-  width: 450px;
-  margin: 20px;
-  padding: var(--card-padding);
-  background-color: #ffffff;
-  border-radius: var(--border-radius);
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.05);
-  isolation: isolate;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  height: 436px;
+  width: 340px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.stock-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-block-end: 20px;
-}
-
-.stock-header h2 {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+.table-title {
+  font-size: 18px;
   font-weight: 600;
   color: #1a1a1a;
-  margin: 0;
+  margin-bottom: 16px;
 }
 
-.update-badge {
-  background-color: #22c55e;
-  color: white;
-  padding: 4px 12px;
-  border-radius: 100vmax;
-  font-size: 0.875rem;
-  font-weight: 500;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.stocks-wrapper {
-  display: grid;
-  gap: 12px;
-}
-
-.stock-card {
-  padding: 16px;
-  border-radius: calc(var(--border-radius) - 4px);
-  background-color: #f8fafc;
-  transition: transform var(--transition-speed) ease,
-              box-shadow var(--transition-speed) ease;
-  will-change: transform;
-}
-
-.stock-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.stock-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-block-end: 8px;
-}
-
-.stock-name {
+/* Company Cell Styles */
+.company-cell {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
-.symbol {
-  font-size: 1.1rem;
-  font-weight: 600;
+.company-name {
+  font-weight: 500;
   color: #1a1a1a;
 }
 
-.company {
-  font-size: 0.875rem;
-  color: #64748b;
+.company-symbol {
+  font-size: 12px;
+  color: #666;
 }
 
-.stock-price {
+/* Price Value Styles */
+.price-value {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* Change Cell Styles */
+.change-cell {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-.price {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-.change {
-  display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.875rem;
   font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 6px;
 }
 
-.change.positive {
-  background-color: #dcfce7;
-  color: #16a34a;
+.change-cell.positive {
+  color: #52c41a;
 }
 
-.change.negative {
-  background-color: #fee2e2;
-  color: #dc2626;
+.change-cell.negative {
+  color: #ff4d4f;
 }
 
-.stock-volume {
-  display: flex;
-  gap: 8px;
-  font-size: 0.875rem;
-  color: #64748b;
+/* Volume Tag Styles */
+.volume-tag {
+  background-color: #f5f5f5 !important;
+  border: none !important;
+  color: #666 !important;
 }
 
-.volume-label {
-  color: #94a3b8;
+/* Table Overrides */
+.stock-table .ant-table {
+  background: transparent;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+.stock-table .ant-table-thead > tr > th {
+  background: transparent;
+  font-size: 12px;
+  color: #666;
+  padding: 8px;
 }
 
-@media (max-width: 768px) {
-  .stock-table-container {
-    width: min(100%, 450px);
-    margin-inline: auto;
-  }
-} 
+.stock-table .ant-table-tbody > tr > td {
+  padding: 8px;
+}
+
+.stock-table .ant-table-tbody > tr:hover > td {
+  background: #f5f5f5;
+}
+
+/* Make the table fit in the container */
+.stock-table .ant-table {
+  font-size: 13px;
+}
+
+.stock-table .ant-table-thead > tr > th,
+.stock-table .ant-table-tbody > tr > td {
+  white-space: nowrap;
+}
+
+/* Scrollbar Styles */
+.stock-table .ant-table-body {
+  scrollbar-width: thin;
+  scrollbar-color: #d9d9d9 #f5f5f5;
+}
+
+.stock-table .ant-table-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.stock-table .ant-table-body::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.stock-table .ant-table-body::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
