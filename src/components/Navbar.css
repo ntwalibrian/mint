@@ -5,7 +5,22 @@
     align-items: center;
     padding: 1rem 2rem;
     background-color: white;
-    
+    transition: top 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .logo {

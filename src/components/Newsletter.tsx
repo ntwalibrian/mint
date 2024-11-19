@@ -1,4 +1,3 @@
-
 import { Mail } from 'lucide-react'
 import { Transition } from '@headlessui/react'
 
@@ -6,7 +5,7 @@ export default function Newsletter() {
   
 
   return (
-    <div className="mt-8 sm:mt-16 bg-[#eff6ff] rounded-xl shadow-sm w-full max-w-[1216px] min-h-[300px] sm:h-[372px] mx-auto relative overflow-hidden px-4 sm:px-0">
+    <div className="mt-8 sm:mt-16 bg-lightBlue rounded-xl shadow-md w-full max-w-5xl min-h-[300px] sm:h-[372px] mx-auto relative overflow-hidden px-4 sm:px-0">
       <div className="h-full flex flex-col sm:flex-row items-center justify-between p-6 sm:px-16 relative z-10">
         <div className="max-w-xl w-full">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">

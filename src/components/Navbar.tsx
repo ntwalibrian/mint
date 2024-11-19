@@ -1,11 +1,14 @@
-
-import  { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
+import { Link } from 'react-scroll';
 import './Navbar.css';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isHidden, setIsHidden] = useState(false);
 
   const showDrawer = () => {
     setOpen(true);
@@ -15,26 +18,46 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      const currentScrollY = window.scrollY;
+      setIsFixed(currentScrollY > 0);
+      setIsHidden(currentScrollY > lastScrollY);
+      setLastScrollY(currentScrollY);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   const menuItems = [
-    { label: 'Home', href: '/home' },
-    { label: 'Features', href: '/features' },
-    { label: 'FAQs', href: '/faqs' },
-    { label: 'News', href: '/news' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Home', href: 'hero' },
+    { label: 'Features', href: 'features' },
+    { label: 'FAQs', href: 'faqs' },
+    { label: 'Blog', href: 'blog' },
   ];
 
   return (
-    <nav className="navbar justify-evenly">
+    <nav className={`navbar justify-evenly ${isFixed ? 'fixed' : ''} ${isHidden ? 'hidden' : ''}`}>
       <div className="logo">
         Logo
       </div>
 
       {/* Desktop Navigation */}
-      <div className="nav-links desktop ">
+      <div className="nav-links desktop">
         {menuItems.map((item) => (
-          <a key={item.label} href={item.href}>
+          <Link 
+            key={item.label} 
+            to={item.href} 
+            smooth={true} 
+            duration={500}
+          >
             {item.label}
-          </a>
+          </Link>
         ))}
         <Button type="primary">Join Now</Button>
       </div>
@@ -54,13 +77,15 @@ const Navbar = () => {
       >
         <div className="mobile-nav-links">
           {menuItems.map((item) => (
-            <a 
+            <Link 
               key={item.label} 
-              href={item.href}
+              to={item.href} 
+              smooth={true} 
+              duration={500} 
               onClick={onClose}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Button type="primary" block>
             Join Now

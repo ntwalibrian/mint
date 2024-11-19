@@ -1,67 +1,79 @@
-import { Footer } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import {    
+  FaFacebook,    
+  FaInstagram,    
+  FaTwitter,    
+  FaGithub,    
+  FaDribbble  
+} from 'react-icons/fa';
 
-export function Footer1() {
+export function CustomFooter() {
   return (
-    <Footer container>
-      <div className="w-full">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div>
-            <Footer.Brand
-              href="https://flowbite.com"
-              src="https://flowbite.com/docs/images/logo.svg"
-              alt="Flowbite Logo"
-              name="Logo"
-            />
-            <p>we loe all of our cusomers plx contact us ajkn</p>
+    <footer className="bg-white py-8 mt-2.5 border-t border-gray-200">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand Section */}
+          <div className="md:col-span-1">
+            <div className="flex items-center mb-4">
+              <span className="text-xl font-bold">Mint Financial</span>
+            </div>
+            <p className="text-gray-600 text-sm">
+              We love all of our customers. Please contact us anytime.
+            </p>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
-            <div>
-              <Footer.Title title="Product" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">Pricing</Footer.Link>
-                <Footer.Link href="#">Case Study</Footer.Link>
-                <Footer.Link href="#">Features</Footer.Link>
-                <Footer.Link href="#">Reviews</Footer.Link>
-              </Footer.LinkGroup>
+
+          {/* Company and Support Links Wrapper */}
+          <div className="md:col-span-2 flex justify-end space-x-12">
+            {/* Company Links */}
+            <div className="text-right">
+              <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">About us</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">News</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">Contact us</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">Career</a></li>
+              </ul>
             </div>
-            <div>
-              <Footer.Title title="Company" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">About us</Footer.Link>
-                <Footer.Link href="#">News</Footer.Link>
-                <Footer.Link href="#">Contact us</Footer.Link>
-                <Footer.Link href="#">Career</Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title title="Support" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">Help Center</Footer.Link>
-                <Footer.Link href="#">Report a Bug</Footer.Link>
-                <Footer.Link href="#">Chat support</Footer.Link>
-              </Footer.LinkGroup>
+
+            {/* Support Links */}
+            <div className="text-right pl-12">
+              <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">Help Center</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">Report a Bug</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-600">Chat support</a></li>
+              </ul>
             </div>
           </div>
         </div>
-        <Footer.Divider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="Flowbite™" year={2022} />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="#" icon={BsGithub} />
-            <Footer.Icon href="#" icon={BsDribbble} />
+
+        {/* Divider */}
+        <hr className="my-8 border-gray-200" />
+
+        {/* Copyright and Social Icons */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-600 text-sm">
+            © 2024 Mint Financial. All Rights Reserved.
+          </p>
+          
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaFacebook size={20} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaInstagram size={20} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaTwitter size={20} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaGithub size={20} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaDribbble size={20} />
+            </a>
           </div>
         </div>
       </div>
-    </Footer>
+    </footer>
   );
 }
