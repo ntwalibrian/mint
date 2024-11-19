@@ -1,0 +1,105 @@
+.grid-container {
+    width: 1216px;
+    height: 764px;
+    margin: 20px auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+    display: flex;
+    gap: 300px;
+    align-items: flex-start;
+}
+
+.left-box {
+    width: 592px;
+    height: 416px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-box {
+    width: 340px;
+    height: 436px;
+    
+    border-radius: 8px;
+}
+
+/* Text Styles */
+h1 {
+    font-weight: bolder;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #000000;
+}
+
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1280px) {
+    .grid-container {
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+        padding: 20px;
+    }
+
+    .left-box, 
+    .right-box {
+        width: 100%;
+        max-width: 592px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .left-box {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}
+
+.artsy-underline {
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Position for the pseudo-element */
+}
+
+.artsy-underline::after {
+    content: ''; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Position at the bottom */
+    height: 4px; /* Height of the line */
+    background: linear-gradient(to right, #00f, #0ff); /* Bluish gradient */
+    border-radius: 2px; /* Optional: rounded edges */
+}
