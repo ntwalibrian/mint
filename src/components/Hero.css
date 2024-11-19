@@ -1,105 +1,117 @@
+/* Container */
 .grid-container {
-    width: 1216px;
-    height: 764px;
-    margin: 20px auto;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 40px;
+    max-width: 1216px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 40px);
     display: flex;
-    gap: 300px;
+    gap: clamp(40px, 8vw, 300px);
     align-items: flex-start;
 }
 
+/* Left Content Box */
 .left-box {
-    width: 592px;
-    height: 416px;
-    padding: 40px;
+    flex: 1;
+    max-width: 592px;
+    min-height: 416px;
+    padding: clamp(20px, 4vw, 40px);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* Right Content Box */
 .right-box {
-    width: 340px;
-    height: 436px;
-    
+    width: min(340px, 100%);
+    min-height: 436px;
     border-radius: 8px;
 }
 
-/* Text Styles */
+/* Typography */
 h1 {
-    font-weight: bolder;
-    font-size: 48px;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem); /* 32px - 48px */
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: clamp(12px, 2vw, 16px);
     color: #000000;
 }
 
-
 .description {
-    font-size: 16px;
+    font-size: clamp(14px, 1.2vw, 16px);
     line-height: 1.6;
     color: #000000;
-    margin-bottom: 32px;
+    margin-bottom: clamp(24px, 4vw, 32px);
 }
 
 /* Button Group */
 .button-group {
     display: flex;
-    gap: 16px;
+    gap: clamp(12px, 2vw, 16px);
+    flex-wrap: nowrap; /* Prevent wrapping by default */
+    width: 100%;
+    max-width: 400px; /* Limit maximum width for better control */
 }
 
-/* Responsive Design */
-@media (max-width: 1280px) {
-    .grid-container {
-        width: 100%;
-        flex-direction: row;
-        height: auto;
-        padding: 20px;
-    }
-
-    .left-box, 
-    .right-box {
-        width: 100%;
-        max-width: 592px;
-        margin-bottom: 20px;
-    }
+.button-group > * {
+    flex: 1; /* Make buttons take equal width */
+    min-width: 120px; /* Minimum button width */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-@media (max-width: 640px) {
-    .left-box {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    .subtitle {
-        font-size: 20px;
-    }
-
-    .button-group {
-        flex-direction: column;
-    }
-
-    .button-group button {
-        width: 100%;
-    }
-}
-
+/* Artsy Underline Effect */
 .artsy-underline {
-    text-decoration: none; /* Remove default underline */
-    position: relative; /* Position for the pseudo-element */
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
 }
 
 .artsy-underline::after {
-    content: ''; /* Create a pseudo-element */
-    position: absolute; /* Position it absolutely */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    bottom: 0; /* Position at the bottom */
-    height: 4px; /* Height of the line */
-    background: linear-gradient(to right, #00f, #0ff); /* Bluish gradient */
-    border-radius: 2px; /* Optional: rounded edges */
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: clamp(2px, 0.4vw, 4px);
+    background: linear-gradient(to right, #00f, #0ff);
+    border-radius: clamp(1px, 0.2vw, 2px);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.artsy-underline:hover::after {
+    transform: scaleX(1.1);
+}
+
+/* Breakpoints */
+@media (max-width: 768px) {
+    .grid-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .left-box,
+    .right-box {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Only stack buttons on very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-group > * {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Optional: Ensure proper box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
