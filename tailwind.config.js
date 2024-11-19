@@ -7,7 +7,13 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkBlue : "#0052CC",
+        lightBlue : "#F0F6FF",
+        lightGrey : "#002966"
+      },
+    },
   },
   plugins: [
     flowbite.plugin(),

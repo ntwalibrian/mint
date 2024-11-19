@@ -24,13 +24,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar justify-evenly">
       <div className="logo">
         Logo
       </div>
 
       {/* Desktop Navigation */}
-      <div className="nav-links desktop">
+      <div className="nav-links desktop ">
         {menuItems.map((item) => (
           <a key={item.label} href={item.href}>
             {item.label}
