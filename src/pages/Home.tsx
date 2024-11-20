@@ -8,16 +8,14 @@ import FeatCard from "../components/BlogSection";
 const Home = () => {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-   <FeatureSection/>
-   <FAQs/>
-   <FeatCard/>
-   <Newsletter/>
-   <CustomFooter/>
-   
-
-   
-   </>
-  )}
+      <Navbar />
+      <Hero />
+      <FeatureSection />
+      <FAQs />
+      <FeatCard />
+      <Newsletter />
+      <CustomFooter />
+    </>
+  );
+};
 export default Home;
