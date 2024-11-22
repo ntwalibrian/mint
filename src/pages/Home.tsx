@@ -5,6 +5,7 @@ import Newsletter from "../components/Newsletter";
 import FeatureSection from "../components/FeatureSection";
 import { CustomFooter } from "../components/Footer";
 import FeatCard from "../components/BlogSection";
+import SignUp from "./Signup";
 const Home = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const Home = () => {
       <FeatCard />
       <Newsletter />
       <CustomFooter />
+      <SignUp/>
     </>
   );
 };

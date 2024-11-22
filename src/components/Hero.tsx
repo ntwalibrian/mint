@@ -1,6 +1,9 @@
 import { Button } from 'antd';
 import './Hero.css';
 import StockTable from './StockTable';
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+
 const Hero = () => {
   return (
     <div className="container section">
@@ -12,12 +15,15 @@ const Hero = () => {
           Invest smarter and trade with confidence on Mint, your platform for simplifying the stock market. Access real-time insights, secure tools, and grow your portfolio with ease.
           </p>
           <div className="button-group">
-            <Button type="primary" size="large">
-              Learn More
-            </Button>
+            <ScrollLink to="features" smooth={true} duration={500}>
+              <Button type="primary" size="large">
+                Learn More
+              </Button>
+            </ScrollLink>
+            <RouterLink to= "/signup">
             <Button size="large">
               Join Now
-            </Button>
+            </Button></RouterLink>
           </div>
         </div>
         

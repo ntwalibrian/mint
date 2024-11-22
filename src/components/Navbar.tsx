@@ -3,6 +3,7 @@ import { Button, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { Link } from 'react-scroll';
 import './Navbar.css';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -87,9 +88,10 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
+          <RouterLink to= "/signup">
           <Button type="primary" block>
             Join Now
-          </Button>
+          </Button></RouterLink>
         </div>
       </Drawer>
     </nav>
