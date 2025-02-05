@@ -1,8 +1,10 @@
 import Label from "./Label";
-import { CiCircleCheck } from "react-icons/ci";
-import { CiMail } from "react-icons/ci";
-import { IoIosPhonePortrait } from "react-icons/io";
-import ChartCard1 from "./ChartCard1";
+import { LuWind } from "react-icons/lu";
+import { LuBanknote } from "react-icons/lu";
+import { LuArrowRightLeft } from "react-icons/lu";
+import P2P from "../assets/Images/6461711.jpg";
+import MinDeposit from "../assets/Images/3700387.jpg";
+import InstDeposit from "../assets/Images/Na_Nov_15.jpg";
 
 function FeatureSection() {
   return (
@@ -15,60 +17,70 @@ function FeatureSection() {
         Our services are designed to cater to your specific financial needs{" "}
         <br className="hidden xl:flex" /> and goals.
       </p>
-      <div className="grid grid-cols-1 xl:grid-cols-[50%_50%] mt-8 justify-items-center items-center gap-8 w-full">
-        <div>
-          <div className="flex flex-col p-6 bg-[#f9fafb] rounded-lg shadow-lg max-w-[544px]">
-            <span className="bg-lightBlue p-3 rounded-xl w-fit">
-              <CiCircleCheck className="text-darkBlue text-[25px]" />
-            </span>
-            <h1 className="text-black text-lg md:text-xl font-semibold my-3">
-              Fractional Shares
-            </h1>
-            <p className="text-lightGrey text-[16px] leading-relaxed">
-              Invest in your favorite companies without needing to buy a full
-              share. With our fractional shares feature, you can start investing
-              with as little as 100FRW. This allows you to own a portion of
-              high-value stocks like Bank Of Kigali, Equity, and more.
-            </p>
+      <div className="grid grid-cols-1 2xl:grid-cols-1 mt-8 justify-items-center items-center gap-8 w-full max-w-[1600px] mx-auto px-4">
+        <div className="space-y-12 w-full">
+          <div className="flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg hover:bg-gray-50 transition-colors">
+            <img
+              src={P2P}
+              alt="Feature illustration 1"
+              className="w-full md:w-[550px] h-[400px] rounded-lg object-cover shadow-lg"
+            />
+            <div className="flex-1 md:ml-8">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 rounded-lg bg-blue-50">
+                  <LuArrowRightLeft className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-lg">P2P Marketplace</h3>
+              </div>
+              <p className="text-gray-600 text-base">
+                Buy and sell stocks directly with others, securely and easily.
+                Trade at your convenience without the middleman, with full
+                control over your transactions.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col p-6 bg-[#f9fafb] rounded-lg shadow-lg max-w-[544px] mt-6">
-            <span className="bg-lightBlue p-3 rounded-xl w-fit">
-              <IoIosPhonePortrait className="text-darkBlue text-[25px]" />
-            </span>
-            <h1 className="text-black text-lg md:text-xl font-semibold my-3">
-              Instant Deposits
-            </h1>
-            <p className="text-lightGrey text-[16px] leading-relaxed">
-              Skip the wait! With instant deposits, you get immediate access to
-              your funds so you can start trading right away. When you initiate
-              a deposit, the platform fronts the money to your account while the
-              actual transfer is processed. This ensures you don’t miss out on
-              timely market opportunities due to delayed fund transfers.
-            </p>
+
+          <div className="flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg hover:bg-gray-50 transition-colors">
+            <img
+              src={MinDeposit}
+              alt="Feature illustration 2"
+              className="w-full md:w-[550px] h-[400px] rounded-lg object-cover shadow-lg"
+            />
+            <div className="flex-1 md:ml-8">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 rounded-lg bg-blue-50">
+                  <LuBanknote className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-lg">No Minimum, Start Now</h3>
+              </div>
+              <p className="text-gray-600 text-base">
+                Invest in top companies with no minimum deposit. Own a part of
+                high-value stocks like Bank of Kigali, Equity, and more,
+                starting with just 100FRW.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col p-6 bg-[#f9fafb] rounded-lg shadow-lg max-w-[544px] mt-6">
-            <span className="bg-lightBlue p-3 rounded-xl w-fit">
-              <CiMail className="text-darkBlue text-[25px]" />
-            </span>
-            <h1 className="text-black text-lg md:text-xl font-semibold my-3">
-              Instant Trades on RSX
-            </h1>
-            <p className="text-lightGrey text-[16px] leading-relaxed">
-              Effortlessly execute buy and sell orders on the Rwanda Stock
-              Exchange (RSX) with lightning-fast transaction speeds. Our
-              platform ensures that your trades are processed in real-time,
-              giving you a competitive edge in capturing the best market
-              opportunities. With a seamless interface and instant
-              confirmations, you can trade confidently and efficiently, knowing
-              your transactions are handled with precision and speed.
-            </p>
+
+          <div className="flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg hover:bg-gray-50 transition-colors">
+            <img
+              src={InstDeposit}
+              alt="Feature illustration 3"
+              className="w-full md:w-[550px] h-[400px] rounded-lg object-cover shadow-lg"
+            />
+            <div className="flex-1 md:ml-8">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 rounded-lg bg-blue-50">
+                  <LuWind className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-lg">Instant Deposits</h3>
+              </div>
+              <p className="text-gray-600 text-base">
+                Get immediate access to your funds and start trading right away.
+                We front the money while the transfer processes, ensuring you
+                never miss a market opportunity.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col w-full items-center bg-[#f9fafb] rounded-lg shadow-lg p-6 max-w-[544px]">
-          <h1 className="text-black text-xl md:text-2xl font-semibold mb-4">
-            Yearly Total Income
-          </h1>
-          <ChartCard1 />
         </div>
       </div>
     </div>

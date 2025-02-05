@@ -1,4 +1,3 @@
-/* Navbar.css */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -26,6 +25,8 @@
 .logo {
     display: flex;
     align-items: center;
+    color: #007bff;
+    font-weight: bolder;
 }
 
 .logo img {
@@ -43,7 +44,7 @@
     text-decoration: none;
     color: rgba(0, 0, 0, 0.88);
     font-size: 1rem;
-   font-weight: light;
+    font-weight: light;
     transition: color 0.3s ease;
 }
 
@@ -66,23 +67,72 @@
     color: #1677ff;
 }
 
-/* Mobile Drawer Styles */
-.mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -80%;
+    width: 80%;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1001;
 }
 
-.mobile-nav-links a {
+.mobile-nav.open {
+    right: 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-icon:hover {
+    color: #1677ff;
+}
+
+.mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.mobile-nav-content a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.88);
-    font-size: 1rem;
+    color: #333;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.mobile-nav-links a:hover {
+.mobile-nav-content a:hover {
     color: #1677ff;
+}
+
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.mobile-nav-overlay.open {
+    display: block;
 }
 
 /* Responsive Design */
@@ -94,9 +144,4 @@
     .mobile-menu {
         display: block;
     }
-}
-
-/* Override Ant Design Drawer styles */
-.mobile-drawer .ant-drawer-body {
-    padding: 24px;
 }

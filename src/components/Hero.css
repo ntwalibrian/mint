@@ -1,13 +1,20 @@
 /* Container */
 .grid-container {
     max-width: 1216px;
-    min-height: 100vh;
+    
     margin: 0 auto;
     padding: clamp(20px, 4vw, 40px);
     display: flex;
     gap: clamp(40px, 8vw, 60px);
     align-items: flex-start;
 }
+.stacked-logo {
+    width: 40px; /* Adjust as needed */
+    height: 40px;
+    border-radius: 50%;
+    margin: -5px 0; /* Overlapping effect */
+  }
+  
 
 /* Left Content Box */
 .left-box {
@@ -21,12 +28,7 @@
 }
 
 /* Right Content Box */
-.right-box {
-    width: min(340px, 100%);
-    min-height: 436px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Typography */
 h1 {
@@ -61,29 +63,10 @@ h1 {
     white-space: nowrap;
 }
 
-/* Artsy Underline Effect */
-.artsy-underline {
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-}
 
-.artsy-underline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: clamp(2px, 0.4vw, 4px);
-    background: linear-gradient(to right, #00f, #0ff);
-    border-radius: clamp(1px, 0.2vw, 2px);
-    transition: transform 0.3s ease;
-    transform-origin: left;
-}
 
-.artsy-underline:hover::after {
-    transform: scaleX(1.1);
-}
+
+
 
 /* Breakpoints */
 @media (max-width: 768px) {

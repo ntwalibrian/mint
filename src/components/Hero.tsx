@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 import './Hero.css';
-import StockTable from './StockTable';
+import CircularLogoAnimation from './Circular-Try';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
@@ -9,28 +9,27 @@ const Hero = () => {
     <div className="container section">
       <div className="grid-container">
         <div className="left-box">
-          <h1>Your Gateway to financial <span className="artsy-underline">freedom</span></h1>
+          <h1>Investing Made Easy</h1>
           
           <p className="description">
-          Invest smarter and trade with confidence on Mint, your platform for simplifying the stock market. Access real-time insights, secure tools, and grow your portfolio with ease.
+          Invest and trade stocks effortlessly with Mint, where security meets simplicity for a seamless trading experience.
           </p>
           <div className="button-group">
+            
+            <RouterLink to= "/signup">
+            <Button size="large" type="primary">
+              Join Now
+            </Button></RouterLink>
             <ScrollLink to="features" smooth={true} duration={500}>
-              <Button type="primary" size="large">
+              <Button  size="large">
                 Learn More
               </Button>
             </ScrollLink>
-            <RouterLink to= "/signup">
-            <Button size="large">
-              Join Now
-            </Button></RouterLink>
           </div>
         </div>
         
         <div className="right-box">
-          <div className="content-box">
-            <StockTable/>
-          </div>
+          <CircularLogoAnimation/>
         </div>
       </div>
     </div>

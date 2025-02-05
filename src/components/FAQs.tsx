@@ -1,6 +1,6 @@
-import { DisclosureGroup } from "./Accordion"
-import { Accordion_data } from "../mocks/AccordionData"
-import { Mail } from "lucide-react"
+import { DisclosureGroup } from "./Accordion";
+import { Accordion_data } from "../mocks/AccordionData";
+import { Mail } from "lucide-react";
 
 function FAQs() {
   return (
@@ -14,24 +14,25 @@ function FAQs() {
             Find answers to common questions about our services.
           </p>
         </div>
-        
-        <DisclosureGroup items={Accordion_data}/>
-        
+
+        <DisclosureGroup items={Accordion_data} />
+
         <div className="mt-8 sm:mt-12 bg-[#eff6ff] rounded-xl p-6 sm:p-8 text-center shadow-sm w-full sm:w-[527px] mx-auto flex flex-col justify-center items-center min-h-[180px] sm:h-[220px]">
           <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
             Still have questions?
           </h3>
           <p className="text-sm sm:text-base text-gray-600 max-w-md">
-            We're sorry we couldn't provide you with the information you were looking for. Please contact us and we'll be happy to help.
+            We're sorry we couldn't provide you with the information you were
+            looking for. Please contact us and we'll be happy to help.
           </p>
-          <button className="mt-4 w-full sm:w-[154px] h-[44px] bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
+          <button className="mt-4 p-3 w-full sm:w-[200px] h-[44px] bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             <Mail className="mr-2" />
-            Contact us
+            Contact Us
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default FAQs
+export default FAQs;

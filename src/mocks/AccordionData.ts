@@ -8,7 +8,7 @@ export const Accordion_data = [
       answer: "To sign up, click on the Sign Up button on our website or app, fill in your personal details, verify your identity, and you’re ready to start investing."
     },
     {
-      question: " Is there a minimum amount to start investing?",
+      question:"  Is there a minimum amount to start investing? ",
       answer: "No, there is no minimum deposit required to open an account with Mint. You can start investing with as little as the price of one share."
     },
     {

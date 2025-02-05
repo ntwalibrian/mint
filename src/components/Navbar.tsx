@@ -1,26 +1,18 @@
-import { useState, useEffect } from 'react';
-import { Button, Drawer } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { Link } from 'react-scroll';
-import './Navbar.css';
-import { Link as RouterLink } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Button } from "antd";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { Link } from "react-scroll";
+import "./Navbar.css";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
-
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleScroll = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined" && !isMobileMenuOpen) {
       const currentScrollY = window.scrollY;
       setIsFixed(currentScrollY > 0);
       setIsHidden(currentScrollY > lastScrollY);
@@ -29,72 +21,86 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      setIsHidden(false);
+    }
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   const menuItems = [
-    { label: 'Home', href: 'hero' },
-    { label: 'Features', href: 'features' },
-    { label: 'FAQs', href: 'faqs' },
-    { label: 'Blog', href: 'blog' },
+    { label: "Home", href: "hero" },
+    { label: "Features", href: "features" },
+    { label: "FAQs", href: "faqs" },
+    { label: "Blog", href: "blog" },
   ];
 
   return (
-    <nav className={`navbar justify-evenly ${isFixed ? 'fixed' : ''} ${isHidden ? 'hidden' : ''}`}>
-      <div className="logo">
-        Logo
-      </div>
-
-      {/* Desktop Navigation */}
-      <div className="nav-links desktop">
-        {menuItems.map((item) => (
-          <Link 
-            key={item.label} 
-            to={item.href} 
-            smooth={true} 
-            duration={500}
-          >
-            {item.label}
-          </Link>
-        ))}
-        <Button type="primary">Join Now</Button>
-      </div>
-
-      {/* Mobile Menu Icon */}
-      <div className="mobile-menu">
-        <MenuOutlined className="menu-icon" onClick={showDrawer} />
-      </div>
-
-      {/* Mobile Sidebar */}
-      <Drawer
-        title="Menu"
-        placement="right"
-        onClose={onClose}
-        open={open}
-        className="mobile-drawer"
+    <>
+      <nav
+        className={`navbar ${isFixed ? "fixed" : ""} ${
+          isHidden ? "hidden" : ""
+        }`}
       >
-        <div className="mobile-nav-links">
+        <div className="logo">Mint</div>
+
+        {/* Desktop Navigation */}
+        <div className="nav-links desktop">
           {menuItems.map((item) => (
-            <Link 
-              key={item.label} 
-              to={item.href} 
-              smooth={true} 
-              duration={500} 
-              onClick={onClose}
-            >
+            <Link key={item.label} to={item.href} smooth={true} duration={500}>
               {item.label}
             </Link>
           ))}
-          <RouterLink to= "/signup">
-          <Button type="primary" block>
-            Join Now
-          </Button></RouterLink>
+          <Button type="primary">Log In</Button>
         </div>
-      </Drawer>
-    </nav>
+
+        {/* Mobile Menu Icon */}
+        <div className="mobile-menu">
+          <MenuOutlined className="menu-icon" onClick={toggleMobileMenu} />
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-nav ${isMobileMenuOpen ? "open" : ""}`}>
+          <div className="mobile-nav-header">
+            <CloseOutlined className="close-icon" onClick={closeMobileMenu} />
+          </div>
+          <div className="mobile-nav-content">
+            {menuItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                smooth={true}
+                duration={500}
+                onClick={closeMobileMenu}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <RouterLink to="/signup">
+              <Button type="primary" block>
+                Log In
+              </Button>
+            </RouterLink>
+          </div>
+        </div>
+      </nav>
+
+      {/* Add overlay div */}
+      <div
+        className={`mobile-nav-overlay ${isMobileMenuOpen ? "open" : ""}`}
+        onClick={closeMobileMenu}
+      />
+    </>
   );
 };
 
