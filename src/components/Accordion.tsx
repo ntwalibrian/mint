@@ -20,7 +20,7 @@ export function DisclosureGroup({ items }: DisclosureGroupProps) {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
               <Disclosure.Button className="group flex w-full items-center justify-between p-6">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-8 h-8 text-gray-700 font-medium text-lg">
+                  <span className="flex items-center w-30 h-9 text-gray-700 font-medium text-lg">
                     {index + 1}.
                   </span>
                   <span className="text-lg font-medium text-gray-900 group-hover:text-gray-700">
