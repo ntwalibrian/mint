@@ -1,0 +1,103 @@
+/* Container */
+.grid-container {
+    max-width: 1216px;
+    
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 40px);
+    display: flex;
+    gap: clamp(40px, 8vw, 60px);
+    align-items: flex-start;
+}
+.stacked-logo {
+    width: 40px; /* Adjust as needed */
+    height: 40px;
+    border-radius: 50%;
+    margin: -5px 0; /* Overlapping effect */
+  }
+  
+
+/* Left Content Box */
+.left-box {
+    flex: 1;
+    max-width: 592px;
+    min-height: 416px;
+    padding: clamp(20px, 4vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Right Content Box */
+
+
+/* Typography */
+h1 {
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: clamp(12px, 2vw, 16px);
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.description {
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: clamp(24px, 4vw, 32px);
+    letter-spacing: 0.3px;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: clamp(12px, 2vw, 16px);
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 400px;
+}
+
+.button-group > * {
+    flex: 1;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+/* Breakpoints */
+@media (max-width: 768px) {
+    .grid-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-box,
+    .right-box {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Only stack buttons on very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-group > * {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Optional: Ensure proper box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
