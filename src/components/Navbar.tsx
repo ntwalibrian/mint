@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { Link } from "react-scroll";
 import "./Navbar.css";
-import { Link as RouterLink } from "react-router-dom";
+
 
 const Navbar = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -61,7 +61,15 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Button type="primary">Log In</Button>
+          <Button type="primary">
+            <a
+              href="https://mint-livid-omega.vercel.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Log In
+            </a>
+          </Button>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -86,11 +94,15 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <RouterLink to="/signup">
+            <a
+              href="https://mint-livid-omega.vercel.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button type="primary" block>
                 Log In
               </Button>
-            </RouterLink>
+            </a>
           </div>
         </div>
       </nav>
