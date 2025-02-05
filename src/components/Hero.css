@@ -9,18 +9,18 @@
     align-items: flex-start;
 }
 .stacked-logo {
-    width: 40px; /* Adjust as needed */
-    height: 40px;
+    width: clamp(32px, 4vw, 40px);
+    height: clamp(32px, 4vw, 40px);
     border-radius: 50%;
-    margin: -5px 0; /* Overlapping effect */
-  }
+    margin: clamp(-5px, -1vw, -3px) 0;
+}
   
 
 /* Left Content Box */
 .left-box {
     flex: 1;
-    max-width: 592px;
-    min-height: 416px;
+    max-width: min(592px, 90%);
+    min-height: clamp(300px, 50vh, 416px);
     padding: clamp(20px, 4vw, 40px);
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ h1 {
 
 .button-group > * {
     flex: 1;
-    min-width: 120px;
+    min-width: clamp(100px, 15vw, 120px);
     white-space: nowrap;
 }
 
