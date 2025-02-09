@@ -3,8 +3,6 @@ import { Element } from 'react-scroll';
 import Hero from './components/Hero';
 import FeatureSection from './components/FeatureSection';
 import FAQs from './components/FAQs';
-import BlogSection from './components/BlogSection';
-import Newsletter from './components/Newsletter';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import Navbar from './components/Navbar';
@@ -24,12 +22,8 @@ const HomePage = () => {
       <Element name="faqs" className="element section">
         <FAQs />
       </Element>
-      <Element name="blog" className="element section">
-        <BlogSection />
-      </Element>
-      <Element name="newsletter" className="element section">
-        <Newsletter />
-      </Element>
+      
+      
       <CustomFooter/>
     </>
   );

@@ -5,10 +5,10 @@ export const Accordion_data = [
     },
     {
       question: "How do I sign up?",
-      answer: "To sign up, click on the Sign Up button on our website or app, fill in your personal details, verify your identity, and you’re ready to start investing."
+      answer: "To sign up, click on the Sign Up button on our website or app, fill in your personal details, verify your identity, and you're ready to start investing."
     },
     {
-      question:"  Is there a minimum amount to start investing? ",
+      question: "Is there a minimum deposit?",
       answer: "No, there is no minimum deposit required to open an account with Mint. You can start investing with as little as the price of one share."
     },
     {
@@ -16,7 +16,7 @@ export const Accordion_data = [
       answer: "Deposit funds via linked bank accounts (1-3 business days) or instantly using the Mint mobile app through mobile money or supported payment wallets."
     },
     {
-        question: "How do I withdraw my money?",
-        answer: "Withdraw funds to your linked bank account (up to 3 business days) or instantly to your mobile wallet."
+      question: "How do I withdraw my money?",
+      answer: "Withdraw funds to your linked bank account (up to 3 business days) or instantly to your mobile wallet."
     }
   ];

@@ -42,7 +42,7 @@ const Navbar = () => {
     { label: "Home", href: "hero" },
     { label: "Features", href: "features" },
     { label: "FAQs", href: "faqs" },
-    { label: "Blog", href: "blog" },
+    
   ];
 
   return (
@@ -61,15 +61,19 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Button type="primary">
-            <a
-              href="https://mint-livid-omega.vercel.app/login"
-              target="_blank"
-              rel="noopener noreferrer"
+          <a
+            href="https://mint-livid-omega.vercel.app/login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button 
+              type="primary" 
+              block 
+              className="!bg-[#007bff] hover:!bg-blue-600 text-white"
             >
               Log In
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -99,7 +103,11 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button type="primary" block>
+              <Button 
+                type="primary" 
+                block 
+                className="!bg-[#007bff] hover:!bg-blue-600 text-white"
+              >
                 Log In
               </Button>
             </a>
