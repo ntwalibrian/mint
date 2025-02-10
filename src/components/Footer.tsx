@@ -1,4 +1,4 @@
-import { FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export function CustomFooter() {
@@ -20,9 +20,21 @@ export function CustomFooter() {
             <div>
               <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-blue-600">About</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-blue-600">News</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-blue-600">Contact</a></li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    News
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Contact
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -30,9 +42,21 @@ export function CustomFooter() {
             <div>
               <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-blue-600">Help</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-blue-600">Report Bug</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-blue-600">Chat</a></li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Help
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Report Bug
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Chat
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -43,7 +67,7 @@ export function CustomFooter() {
           <p className="text-gray-600 text-sm">
             © 2025 Mint Financial. All Rights Reserved.
           </p>
-          
+
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-600 hover:text-blue-600">
               <FaInstagram size={20} />

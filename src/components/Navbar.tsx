@@ -4,7 +4,6 @@ import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { Link } from "react-scroll";
 import "./Navbar.css";
 
-
 const Navbar = () => {
   const [isFixed, setIsFixed] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -42,7 +41,6 @@ const Navbar = () => {
     { label: "Home", href: "hero" },
     { label: "Features", href: "features" },
     { label: "FAQs", href: "faqs" },
-    
   ];
 
   return (
@@ -66,9 +64,9 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button 
-              type="primary" 
-              block 
+            <Button
+              type="primary"
+              block
               className="!bg-[#007bff] hover:!bg-blue-600 text-white"
             >
               Log In
@@ -103,9 +101,9 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button 
-                type="primary" 
-                block 
+              <Button
+                type="primary"
+                block
                 className="!bg-[#007bff] hover:!bg-blue-600 text-white"
               >
                 Log In
